@@ -20,7 +20,9 @@ services:
               "tls_disable": 1
             }
           },
-          "ui": true
+          "ui": true,
+            "disable_mlock": true
+
         }
     ports:
       - "8200:8200"
