@@ -4,9 +4,9 @@ services:
   vault:
     image: hashicorp/vault:1.17
     container_name: vault
-    cap_add:
-      - IPC_LOCK
     environment:
+      SKIP_CHOWN: "true"
+      SKIP_SETCAP: "true"
       VAULT_LOCAL_CONFIG: |
         {
           "backend": {
@@ -21,8 +21,7 @@ services:
             }
           },
           "ui": true,
-            "disable_mlock": true
-
+          "disable_mlock": true
         }
     ports:
       - "8200:8200"
