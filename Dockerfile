@@ -4,6 +4,5 @@ ENV SKIP_CHOWN=true \
     SKIP_SETCAP=true
 
 # FROM hashicorp/vault
-RUN setcap /bin/vault
-
+RUN setcap cap_ipc_lock=+ep /bin/vault
 
