@@ -6,3 +6,5 @@ ENV SKIP_CHOWN=true \
 # FROM hashicorp/vault
 RUN setcap cap_ipc_lock=+ep /bin/vault
 
+USER root
+ENTRYPOINT ["vault", "server", "-config=/vault/config/config.hcl"]
